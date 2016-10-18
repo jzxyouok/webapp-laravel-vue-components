@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
+});
+
+Route::get('/link', function () {
+  return view('link');
+});
+
+Route::get('message', function () {
+  return response()->json('hello world!');
 });

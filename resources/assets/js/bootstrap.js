@@ -8,6 +8,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+require('jquery-ujs');
 require('bootstrap-sass');
 
 /**
@@ -17,6 +18,7 @@ require('bootstrap-sass');
  */
 
 window.Vue = require('vue');
+Vue.config.silent = false;
 require('vue-resource');
 
 /**
@@ -26,20 +28,12 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+  request.headers.set('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
 
-    next();
+  next();
 });
 
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from "laravel-echo"
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+// Turbolinks
+require('jquery.turbolinks');
+window.Turbolinks = require('turbolinks');
+Turbolinks.start();

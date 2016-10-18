@@ -5,7 +5,8 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 class="text-center">Welcome!</h1>
+    @include('components/demo')
+    @include('components/demo2')
   </div>
 </div>
 

@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "authors": [
+    "david miranda <davidmirandagrinstein@gmail.com>"
+  ],
+  "private": true,
+  "devDependencies": {
+
+  }
+}
